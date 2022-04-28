@@ -42,7 +42,144 @@
         color: #343a40;
         line-height: 1;
       }
+      img {
+        height: 200px;
+        border-radius: 8px;
+        transform: scale(1.5);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.3);
+      }
+      .button {
+        background-color: white;
+        border: none;
+        width: 40px;
+        height: 40px;
+        position: absolute;
+        border-radius: 50%;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+      }
+      .btn-left {
+        left: 0;
+        /* brings element to center of the parent container... */
+        top: 50%;
+        /* X and Y: -50% will move it up 50% of it's height */
+        /* use transform translate to manipulate movement of element */
+        transform: translate(-50%, -50%);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+      .btn-right {
+        right: 0;
+        top: 50%;
+        transform: translate(50%, -50%);
+        box-shadow: 0 12px 24px rgba(0, 0, 0, 0.4);
+      }
+      .icon {
+        width: 24px;
+        height: 24px;
+      }
+      .carousel {
+        position: relative;
+        background-color: var(--main-color);
+        width: 800px;
+        margin: 100px auto;
+        border-radius: 8px;
+        /* padding: top right bottom left, clock wise */
+        padding: 32px 48px 32px 86px;
+        display: flex;
+        align-items: center;
+        gap: 86px;
+      }
+      .testimonial-text {
+        font-size: 18px;
+        font-weight: 500;
+        line-height: 1.5;
+        margin-bottom: 32px;
+        color: #e6fcf5;
+      }
+      .testimonial-author {
+        font-size: 14px;
+        margin-bottom: 4px;
+        color: #c3fae8;
+      }
+      .testimonial-job {
+        font-size: 12px;
+        color: #c3fae8;
+      }
+      .dots {
+        position: absolute;
+        display: flex;
+        left: 50%;
+        bottom: 0;
+        transform: translate(-50%, 24px);
+        gap: 12px;
+      }
+      .dot {
+        height: 12px;
+        background-color: white;
+        border: 2px solid var(--main-color);
+        border-radius: 50%;
+        width: 12px;
+      }
+      .active {
+        background-color: var(--main-color);
+      }
     </style>
   </head>
-  <body></body>
+  <body>
+    <!-- none semantic -->
+    <div class="carousel">
+      <img src="maria.jpg" alt="maria maria maria" />
+
+      <!-- semantic way of blocking out a quote -->
+      <blockquote class="testimonial">
+        <p class="testimonial-text">
+          "Lorem ipsum, dolor sit amet consectetur adipisicing elit. Vel qui
+          cumque debitis optio ducimus amet, ipsam accusantium temporibus minus
+          distinctio"
+        </p>
+        <p class="testimonial-author">Maria de Almeida</p>
+        <p class="testimonial-job">Senior Product Manager at EDP Comerical</p>
+      </blockquote>
+      <button class="button btn-left">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="var(--main-color)"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M15 19l-7-7 7-7"
+          />
+        </svg>
+      </button>
+      <button class="button btn-right">
+        <svg
+          xmlns="http://www.w3.org/2000/svg"
+          class="icon"
+          fill="none"
+          viewBox="0 0 24 24"
+          stroke="var(--main-color)"
+          stroke-width="2"
+        >
+          <path
+            stroke-linecap="round"
+            stroke-linejoin="round"
+            d="M9 5l7 7-7 7"
+          />
+        </svg>
+      </button>
+      <div class="dots">
+        <div class="dot active">&nbsp;</div>
+        <div class="dot">&nbsp;</div>
+        <div class="dot">&nbsp;</div>
+        <div class="dot">&nbsp;</div>
+      </div>
+    </div>
+  </body>
 </html>
