@@ -31,6 +31,25 @@
       header {
         height: 100vh;
         background-color: pink;
+        /* didn't know you could stack this lol */
+        background-image: linear-gradient(
+            rgba(0, 0, 0, 0.5),
+            rgba(34, 89, 122, 0.5)
+          ),
+          url("hero.jpg");
+        background-size: cover;
+        position: relative;
+        color: white;
+      }
+      .header {
+        width: 1200px;
+        position: absolute;
+        left: 50%;
+        top: 50%;
+        transform: translate(-50%, -50%);
+      }
+      .inner-container {
+        width: 50%;
       }
 
       nav {
@@ -38,11 +57,12 @@
         justify-content: space-between;
         font-size: 20px;
         font-weight: 700;
-        background-color: green;
+        padding-top: 32px;
       }
       h1 {
         font-size: 52px;
         margin-bottom: 32px;
+        line-height: 1.05;
       }
       p {
         font-size: 20px;
@@ -64,7 +84,6 @@
       }
       section {
         padding: 96px 0px;
-        background-color: #f7f7f7;
       }
     </style>
   </head>
@@ -74,14 +93,16 @@
         <div>Logo</div>
         <div>Navigation</div>
       </nav>
-      <div class="container">
-        <h1>A healthy meal delivered to your door, every single day</h1>
-        <p>
-          The smart 365-days-per year food subscription that will make you eat
-          healthy again. Tailored to your personal tastes and nurtritional
-          needs.
-        </p>
-        <a href="#" class="btn">Start eating well</a>
+      <div class="container header">
+        <div class="inner-container">
+          <h1>A healthy meal delivered to your door, every single day</h1>
+          <p>
+            The smart 365-days-per year food subscription that will make you eat
+            healthy again. Tailored to your personal tastes and nurtritional
+            needs.
+          </p>
+          <a href="#" class="btn">Start eating well</a>
+        </div>
       </div>
     </header>
 
